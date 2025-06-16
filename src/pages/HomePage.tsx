@@ -49,10 +49,10 @@ const HomePage = () => {
               sx={{
                 color: 'primary.main',
                 '&:hover': {
-                  backgroundColor: 'rgba(0, 28, 59, 0.04)',
+                  backgroundColor: 'rgba(0, 146, 70, 0.04)',
                 }
               }}
-              title="View Menu"
+              title="View Recipes"
             >
               <RestaurantMenuIcon />
             </IconButton>
@@ -69,12 +69,15 @@ const HomePage = () => {
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
-            pt: hasMenuData ? 8 : 0, // Add padding top when AppBar is present
+            pt: hasMenuData ? 8 : 0,
           }}
         >
-          <Logo src="/logo.png" alt="Menu Translator" />
+          <Logo src="/logo.png" alt="Recipe off the Fridge" />
           <Typography variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 600 }}>
-            Menu Translator
+            Recipe off the Fridge
+          </Typography>
+          <Typography variant="subtitle1" sx={{ color: 'text.secondary', mb: 2, maxWidth: '400px' }}>
+            Take a photo of your fridge contents and discover delicious recipes you can make!
           </Typography>
 
           <Box sx={{ mt: 4, display: 'flex', gap: 2, flexDirection: 'column', width: '100%' }}>
@@ -86,13 +89,13 @@ const HomePage = () => {
               sx={{ 
                 fontSize: '1.2rem', 
                 py: 2,
-                background: 'linear-gradient(45deg, #001c3b 30%, #1a3a5c 90%)',
+                background: 'linear-gradient(45deg, #009246 30%, #4CAF50 90%)',
                 '&:hover': {
-                  background: 'linear-gradient(45deg, #000f1f 30%, #001c3b 90%)',
+                  background: 'linear-gradient(45deg, #006B33 30%, #009246 90%)',
                 }
               }}
             >
-              Take Photo
+              Take Photo of Fridge
               <input
                 type="file"
                 accept="image/*"
@@ -111,7 +114,7 @@ const HomePage = () => {
                 color: 'primary.main',
                 '&:hover': {
                   borderColor: 'primary.dark',
-                  backgroundColor: 'rgba(0, 28, 59, 0.04)',
+                  backgroundColor: 'rgba(0, 146, 70, 0.04)',
                 },
               }}
             >

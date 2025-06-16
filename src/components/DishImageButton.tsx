@@ -29,13 +29,13 @@ const DishImageButton = ({ dishName, size = 'medium', variant = 'floating' }: Di
   const baseStyles = {
     width: buttonSizes[size],
     height: buttonSizes[size],
-    backgroundColor: 'rgba(0, 28, 59, 0.9)',
+    backgroundColor: 'rgba(0, 146, 70, 0.9)',
     color: 'white',
     transition: 'all 0.2s ease-in-out',
     '&:hover': {
-      backgroundColor: 'rgba(0, 28, 59, 1)',
+      backgroundColor: 'rgba(0, 146, 70, 1)',
       transform: 'scale(1.1)',
-      boxShadow: '0px 4px 12px rgba(0, 28, 59, 0.3)',
+      boxShadow: '0px 4px 12px rgba(0, 146, 70, 0.3)',
     },
   }
 

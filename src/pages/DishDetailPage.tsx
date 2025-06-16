@@ -59,7 +59,7 @@ const DishDetailPage = () => {
             sx={{ 
               color: 'primary.main',
               '&:hover': {
-                backgroundColor: 'rgba(0, 28, 59, 0.04)',
+                backgroundColor: 'rgba(0, 146, 70, 0.04)',
               }
             }}
           >
@@ -71,10 +71,10 @@ const DishDetailPage = () => {
             sx={{
               color: 'primary.main',
               '&:hover': {
-                backgroundColor: 'rgba(0, 28, 59, 0.04)',
+                backgroundColor: 'rgba(0, 146, 70, 0.04)',
               }
             }}
-            title="View Menu"
+            title="View Recipes"
           >
             <RestaurantMenuIcon />
           </IconButton>
@@ -109,7 +109,7 @@ const DishDetailPage = () => {
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
             <Typography variant="h5" sx={{ color: 'secondary.main', fontWeight: 600 }}>
-              Price: {item.price}
+              Difficulty: {item.price}
             </Typography>
             <Button
               variant="outlined"
@@ -121,17 +121,17 @@ const DishDetailPage = () => {
                 color: 'secondary.main',
                 '&:hover': {
                   borderColor: 'secondary.dark',
-                  backgroundColor: 'rgba(214, 175, 97, 0.04)',
+                  backgroundColor: 'rgba(206, 43, 55, 0.04)',
                 }
               }}
             >
-              Find Recipe
+              Find Full Recipe
             </Button>
           </Box>
 
           <Paper sx={{ p: 3, mb: 3 }}>
             <Typography variant="h6" gutterBottom sx={{ color: 'primary.main' }}>
-              Description
+              Recipe Description
             </Typography>
             <Typography>{item.description}</Typography>
           </Paper>
@@ -139,11 +139,11 @@ const DishDetailPage = () => {
           <Paper sx={{ 
             p: 3, 
             mb: 3, 
-            bgcolor: 'rgba(0, 28, 59, 0.02)',
-            border: '1px solid rgba(0, 28, 59, 0.08)'
+            bgcolor: 'rgba(0, 146, 70, 0.02)',
+            border: '1px solid rgba(0, 146, 70, 0.08)'
           }}>
             <Typography variant="h6" gutterBottom sx={{ color: 'primary.main' }}>
-              History
+              About This Dish
             </Typography>
             <Typography sx={{ 
               lineHeight: 1.8,
@@ -156,7 +156,7 @@ const DishDetailPage = () => {
 
           <Paper sx={{ p: 3, mb: 3 }}>
             <Typography variant="h6" gutterBottom sx={{ color: 'primary.main' }}>
-              Ingredients
+              Ingredients Needed
             </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               {item.ingredients.map((ingredient: string) => (
@@ -168,12 +168,12 @@ const DishDetailPage = () => {
           {item.allergens.length > 0 && (
             <Paper sx={{ 
               p: 3, 
-              bgcolor: 'rgba(214, 175, 97, 0.08)',
-              border: '1px solid rgba(214, 175, 97, 0.2)'
+              bgcolor: 'rgba(255, 152, 0, 0.08)',
+              border: '1px solid rgba(255, 152, 0, 0.2)'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
                 <Typography variant="h6" sx={{ color: 'primary.main' }}>
-                  Allergens
+                  Allergen Information
                 </Typography>
                 <Button
                   variant="text"
@@ -181,10 +181,10 @@ const DishDetailPage = () => {
                   startIcon={<InfoIcon />}
                   onClick={openAllergenListWikipedia}
                   sx={{
-                    color: 'secondary.main',
+                    color: 'warning.main',
                     fontSize: '0.75rem',
                     '&:hover': {
-                      backgroundColor: 'rgba(214, 175, 97, 0.04)',
+                      backgroundColor: 'rgba(255, 152, 0, 0.04)',
                     }
                   }}
                 >

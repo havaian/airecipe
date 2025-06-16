@@ -24,14 +24,14 @@ const IngredientChip = ({ ingredient, variant = 'default', size = 'medium' }: In
         size={size}
         variant={variant}
         sx={{
-          backgroundColor: 'rgba(0, 28, 59, 0.08)',
+          backgroundColor: 'rgba(0, 146, 70, 0.08)',
           color: 'primary.main',
           cursor: 'pointer',
           transition: 'all 0.2s ease-in-out',
           '&:hover': {
-            backgroundColor: 'rgba(0, 28, 59, 0.12)',
+            backgroundColor: 'rgba(0, 146, 70, 0.12)',
             transform: 'translateY(-1px)',
-            boxShadow: '0px 2px 8px rgba(0, 28, 59, 0.15)',
+            boxShadow: '0px 2px 8px rgba(0, 146, 70, 0.15)',
           },
           '& .MuiChip-deleteIcon': {
             color: 'primary.main',

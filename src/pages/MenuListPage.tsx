@@ -67,7 +67,7 @@ const MenuListPage = () => {
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <RestaurantMenuIcon sx={{ color: 'primary.main' }} />
             <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 600 }}>
-              Menu
+              Your Recipes
             </Typography>
             {menuData.originalImage && (
               <IconButton
@@ -76,10 +76,10 @@ const MenuListPage = () => {
                   ml: 1,
                   color: 'primary.main',
                   '&:hover': {
-                    backgroundColor: 'rgba(0, 28, 59, 0.04)',
+                    backgroundColor: 'rgba(0, 146, 70, 0.04)',
                   }
                 }}
-                title="Toggle original menu image"
+                title="Toggle original fridge photo"
               >
                 <PhotoIcon />
               </IconButton>
@@ -90,13 +90,13 @@ const MenuListPage = () => {
             startIcon={<SearchIcon />}
             onClick={() => navigate('/')}
             sx={{
-              background: 'linear-gradient(45deg, #001c3b 30%, #1a3a5c 90%)',
+              background: 'linear-gradient(45deg, #009246 30%, #4CAF50 90%)',
               '&:hover': {
-                background: 'linear-gradient(45deg, #000f1f 30%, #001c3b 90%)',
+                background: 'linear-gradient(45deg, #006B33 30%, #009246 90%)',
               }
             }}
           >
-            New Search
+            New Fridge Scan
           </Button>
         </Toolbar>
       </AppBar>
@@ -105,7 +105,7 @@ const MenuListPage = () => {
         {showOriginalImage && menuData.originalImage && (
           <Paper sx={{ p: 2, mb: 4, textAlign: 'center' }}>
             <Typography variant="h6" sx={{ mb: 2, color: 'primary.main' }}>
-              Original Menu
+              Your Fridge Contents
             </Typography>
             <Box sx={{ 
               display: 'flex', 
@@ -115,12 +115,12 @@ const MenuListPage = () => {
                 maxHeight: '70vh',
                 objectFit: 'contain',
                 borderRadius: 2,
-                boxShadow: '0px 4px 20px rgba(0, 28, 59, 0.1)'
+                boxShadow: '0px 4px 20px rgba(0, 146, 70, 0.1)'
               }
             }}>
               <img 
                 src={menuData.originalImage} 
-                alt="Original menu" 
+                alt="Original fridge contents" 
               />
             </Box>
           </Paper>
@@ -144,7 +144,7 @@ const MenuListPage = () => {
                       position: 'relative',
                       '&:hover': {
                         transform: 'translateY(-4px)',
-                        boxShadow: '0px 8px 25px rgba(0, 28, 59, 0.15)',
+                        boxShadow: '0px 8px 25px rgba(0, 146, 70, 0.15)',
                       }
                     }}
                   >
@@ -169,7 +169,7 @@ const MenuListPage = () => {
                         {item.name}
                       </Typography>
                       <Typography variant="subtitle1" sx={{ color: 'secondary.main', fontWeight: 600 }}>
-                        Price: {item.price}
+                        Difficulty: {item.price}
                       </Typography>
                     </CardContent>
                   </Card>

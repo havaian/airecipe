@@ -1,6 +1,6 @@
 {
-  "short_name": "Menu Translator",
-  "name": "Restaurant Menu Translator",
+  "short_name": "Recipe off the Fridge",
+  "name": "Recipe off the Fridge - Create recipes from your fridge",
   "icons": [
     {
       "src": "logo.png",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#001c3b",
+  "theme_color": "#009246",
   "background_color": "#ffffff"
 }

@@ -33,11 +33,9 @@ const MenuAnalysisPage = () => {
   useEffect(() => {
     const image = location.state?.image as File
     if (image) {
-      // Create preview URL for the image
       const previewUrl = URL.createObjectURL(image)
       setImagePreview(previewUrl)
       
-      // Cleanup preview URL when component unmounts
       return () => URL.revokeObjectURL(previewUrl)
     }
   }, [location.state?.image])
@@ -64,7 +62,6 @@ const MenuAnalysisPage = () => {
 
       const menuData = await analyzeMenu(image, key)
       localStorage.setItem(API_KEY_STORAGE_KEY, key)
-      // Pass the original image to dataService
       await dataService.setMenuData(menuData, image)
       navigate('/menu')
     } catch (err) {
@@ -107,10 +104,10 @@ const MenuAnalysisPage = () => {
               sx={{
                 color: 'primary.main',
                 '&:hover': {
-                  backgroundColor: 'rgba(0, 28, 59, 0.04)',
+                  backgroundColor: 'rgba(0, 146, 70, 0.04)',
                 }
               }}
-              title="View Menu"
+              title="View Recipes"
             >
               <RestaurantMenuIcon />
             </IconButton>
@@ -127,8 +124,8 @@ const MenuAnalysisPage = () => {
           justifyContent: 'center',
           p: 2,
           gap: 4,
-          pt: hasMenuData ? 10 : 2, // Add padding top when AppBar is present
-          background: isAnalyzing ? 'linear-gradient(135deg, #001c3b 0%, #1a3a5c 100%)' : 'inherit',
+          pt: hasMenuData ? 10 : 2,
+          background: isAnalyzing ? 'linear-gradient(135deg, #009246 0%, #4CAF50 100%)' : 'inherit',
         }}
       >
         {showApiInput ? (
@@ -159,13 +156,13 @@ const MenuAnalysisPage = () => {
               type="submit"
               disabled={!apiKey.trim() || isAnalyzing}
               sx={{
-                background: 'linear-gradient(45deg, #001c3b 30%, #1a3a5c 90%)',
+                background: 'linear-gradient(45deg, #009246 30%, #4CAF50 90%)',
                 '&:hover': {
-                  background: 'linear-gradient(45deg, #000f1f 30%, #001c3b 90%)',
+                  background: 'linear-gradient(45deg, #006B33 30%, #009246 90%)',
                 }
               }}
             >
-              {isAnalyzing ? 'Analyzing...' : 'Analyze Menu'}
+              {isAnalyzing ? 'Analyzing fridge...' : 'Analyze Fridge Contents'}
             </Button>
           </Paper>
         ) : isAnalyzing ? (
@@ -173,7 +170,10 @@ const MenuAnalysisPage = () => {
             <Box sx={{ textAlign: 'center' }}>
               <CircularProgress size={60} sx={{ color: 'white' }} />
               <Typography variant="h6" sx={{ mt: 2, color: 'white', fontWeight: 600 }}>
-                Analyzing menu...
+                Analyzing your fridge contents...
+              </Typography>
+              <Typography variant="body2" sx={{ mt: 1, color: 'rgba(255,255,255,0.8)' }}>
+                Finding delicious recipes you can make!
               </Typography>
             </Box>
             {imagePreview && (
@@ -182,14 +182,14 @@ const MenuAnalysisPage = () => {
                   maxWidth: 400, 
                   width: '100%',
                   overflow: 'hidden',
-                  opacity: 0.9, // Slightly dim the image during analysis
+                  opacity: 0.9,
                   transition: 'opacity 0.3s ease',
                 }}
               >
                 <CardMedia
                   component="img"
                   image={imagePreview}
-                  alt="Menu preview"
+                  alt="Fridge contents preview"
                   sx={{
                     width: '100%',
                     height: 'auto',
