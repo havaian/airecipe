@@ -168,11 +168,17 @@ const MenuAnalysisPage = () => {
         ) : isAnalyzing ? (
           <>
             <Box sx={{ textAlign: 'center' }}>
-              <CircularProgress size={60} sx={{ color: 'primary.main' }} />
-              <Typography variant="h6" sx={{ mt: 2, color: 'primary.main', fontWeight: 600 }}>
-                Analyzing fridge...
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 1, color: 'text.secondary' }}>
+              <CircularProgress 
+                size={80} 
+                thickness={4}
+                sx={{ 
+                  color: 'white',
+                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                  borderRadius: '50%',
+                  p: 1
+                }} 
+              />
+              <Typography variant="body2" sx={{ mt: 3, color: 'text.secondary' }}>
                 Finding delicious recipes you can make!
               </Typography>
             </Box>
