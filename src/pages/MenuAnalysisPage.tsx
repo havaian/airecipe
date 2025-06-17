@@ -125,7 +125,7 @@ const MenuAnalysisPage = () => {
           p: 2,
           gap: 4,
           pt: hasMenuData ? 10 : 2,
-          background: isAnalyzing ? 'linear-gradient(135deg, #009246 0%, #4CAF50 100%)' : 'inherit',
+          backgroundColor: 'white',
         }}
       >
         {showApiInput ? (
@@ -168,11 +168,11 @@ const MenuAnalysisPage = () => {
         ) : isAnalyzing ? (
           <>
             <Box sx={{ textAlign: 'center' }}>
-              <CircularProgress size={60} sx={{ color: 'white' }} />
-              <Typography variant="h6" sx={{ mt: 2, color: 'white', fontWeight: 600 }}>
-                Analyzing your fridge contents...
+              <CircularProgress size={60} sx={{ color: 'primary.main' }} />
+              <Typography variant="h6" sx={{ mt: 2, color: 'primary.main', fontWeight: 600 }}>
+                Analyzing fridge...
               </Typography>
-              <Typography variant="body2" sx={{ mt: 1, color: 'rgba(255,255,255,0.8)' }}>
+              <Typography variant="body2" sx={{ mt: 1, color: 'text.secondary' }}>
                 Finding delicious recipes you can make!
               </Typography>
             </Box>
@@ -182,8 +182,6 @@ const MenuAnalysisPage = () => {
                   maxWidth: 400, 
                   width: '100%',
                   overflow: 'hidden',
-                  opacity: 0.9,
-                  transition: 'opacity 0.3s ease',
                 }}
               >
                 <CardMedia

@@ -19,6 +19,7 @@ import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
 import PhotoIcon from '@mui/icons-material/Photo'
 import { dataService } from '../services/dataService'
 import DishImageButton from '../components/DishImageButton'
+import { getDifficultyColor } from '../utils/difficultyUtils'
 
 interface MenuItem {
   name: string
@@ -128,7 +129,7 @@ const MenuListPage = () => {
 
         {menuData.categories.map((category) => (
           <Box key={category.name} sx={{ mb: 4 }}>
-            <Typography variant="h5" sx={{ mb: 2, color: 'primary.main', fontWeight: 600 }}>
+            <Typography variant="h5" sx={{ mb: 2, color: 'warning.contrastText', fontWeight: 600 }}>
               {category.name}
             </Typography>
             <Grid container spacing={2}>
@@ -165,10 +166,16 @@ const MenuListPage = () => {
                       />
                     </Box>
                     <CardContent sx={{ flexGrow: 1 }}>
-                      <Typography variant="h6" noWrap sx={{ color: 'primary.main' }}>
+                      <Typography variant="h6" noWrap sx={{ color: 'warning.contrastText' }}>
                         {item.name}
                       </Typography>
-                      <Typography variant="subtitle1" sx={{ color: 'secondary.main', fontWeight: 600 }}>
+                      <Typography 
+                        variant="subtitle1" 
+                        sx={{ 
+                          color: getDifficultyColor(item.price),
+                          fontWeight: 600 
+                        }}
+                      >
                         Difficulty: {item.price}
                       </Typography>
                     </CardContent>

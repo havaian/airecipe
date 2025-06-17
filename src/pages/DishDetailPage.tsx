@@ -22,6 +22,7 @@ import IngredientChip from '../components/IngredientChip'
 import AllergenChip from '../components/AllergenChip'
 import DishImageButton from '../components/DishImageButton'
 import { openRecipeSearch, openAllergenListWikipedia } from '../utils/googleImageUtils'
+import { getDifficultyColor } from '../utils/difficultyUtils'
 
 const DishDetailPage = () => {
   const { id } = useParams()
@@ -101,14 +102,20 @@ const DishDetailPage = () => {
           ) : null}
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mt: 3, mb: 2 }}>
-            <Typography variant="h4" sx={{ color: 'primary.main', flex: 1 }}>
+            <Typography variant="h4" sx={{ color: 'warning.contrastText', flex: 1 }}>
               {item.name}
             </Typography>
             <DishImageButton dishName={item.name} variant="inline" size="large" />
           </Box>
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-            <Typography variant="h5" sx={{ color: 'secondary.main', fontWeight: 600 }}>
+            <Typography 
+              variant="h5" 
+              sx={{ 
+                color: getDifficultyColor(item.price),
+                fontWeight: 600 
+              }}
+            >
               Difficulty: {item.price}
             </Typography>
             <Button
@@ -130,7 +137,7 @@ const DishDetailPage = () => {
           </Box>
 
           <Paper sx={{ p: 3, mb: 3 }}>
-            <Typography variant="h6" gutterBottom sx={{ color: 'primary.main' }}>
+            <Typography variant="h6" gutterBottom sx={{ color: 'warning.contrastText' }}>
               Recipe Description
             </Typography>
             <Typography>{item.description}</Typography>
@@ -142,7 +149,7 @@ const DishDetailPage = () => {
             bgcolor: 'rgba(0, 146, 70, 0.02)',
             border: '1px solid rgba(0, 146, 70, 0.08)'
           }}>
-            <Typography variant="h6" gutterBottom sx={{ color: 'primary.main' }}>
+            <Typography variant="h6" gutterBottom sx={{ color: 'warning.contrastText' }}>
               About This Dish
             </Typography>
             <Typography sx={{ 
@@ -155,7 +162,7 @@ const DishDetailPage = () => {
           </Paper>
 
           <Paper sx={{ p: 3, mb: 3 }}>
-            <Typography variant="h6" gutterBottom sx={{ color: 'primary.main' }}>
+            <Typography variant="h6" gutterBottom sx={{ color: 'warning.contrastText' }}>
               Ingredients Needed
             </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
@@ -172,7 +179,7 @@ const DishDetailPage = () => {
               border: '1px solid rgba(255, 152, 0, 0.2)'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-                <Typography variant="h6" sx={{ color: 'primary.main' }}>
+                <Typography variant="h6" sx={{ color: 'warning.contrastText' }}>
                   Allergen Information
                 </Typography>
                 <Button
