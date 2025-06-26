@@ -1,5 +1,4 @@
-# Ai Menu Parser
-
+# Airecipe
 Step 1. Add your Google Image Search key to `src/config/config.ts`
 
 Step 2.
