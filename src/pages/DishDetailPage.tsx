@@ -28,7 +28,7 @@ const DishDetailPage = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [item, setItem] = useState<MenuItem | null>(null)
-  const hasMenuData = dataService.getMenuData() !== null
+  // const hasMenuData = dataService.getMenuData() !== null
 
   useEffect(() => {
     if (!id) {

@@ -23,7 +23,7 @@ const Logo = styled('img')({
 
 const HomePage = () => {
   const navigate = useNavigate()
-  const [selectedImage, setSelectedImage] = useState<File | null>(null)
+  const [_selectedImage, setSelectedImage] = useState<File | null>(null)
   const hasMenuData = dataService.getMenuData() !== null
 
   const handleCapture = async (e: React.ChangeEvent<HTMLInputElement>) => {

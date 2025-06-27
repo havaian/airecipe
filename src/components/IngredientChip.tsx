@@ -4,11 +4,11 @@ import { openGoogleImageSearch } from '../utils/googleImageUtils'
 
 interface IngredientChipProps {
   ingredient: string
-  variant?: 'default' | 'outlined'
+  variant?: 'filled' | 'outlined'
   size?: 'small' | 'medium'
 }
 
-const IngredientChip = ({ ingredient, variant = 'default', size = 'medium' }: IngredientChipProps) => {
+const IngredientChip = ({ ingredient, variant = 'outlined', size = 'medium' }: IngredientChipProps) => {
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation()
     openGoogleImageSearch(ingredient)
