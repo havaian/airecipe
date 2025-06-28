@@ -72,7 +72,7 @@ const HomePage = () => {
             pt: hasMenuData ? 8 : 0,
           }}
         >
-          <Logo src="/logo.png" alt="Recipe off the Fridge" />
+          <Logo src="/bolt-logo.png" alt="Recipe off the Fridge" />
           <Typography variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 600 }}>
             Recipe off the Fridge
           </Typography>
