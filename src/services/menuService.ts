@@ -42,8 +42,6 @@ export const analyzeMenu = async (image: File, apiKey: string): Promise<any> => 
     const jsonMatch = content.match(/^```json\s*([\s\S]*?)\s*```$/)
     const cleanedJson = jsonMatch ? jsonMatch[1].trim() : content.trim()
     
-    console.log("ChatGPT content:", cleanedJson)
-    
     return JSON.parse(cleanedJson)
   } catch (error) {
     console.error('Error analyzing menu:', error)
