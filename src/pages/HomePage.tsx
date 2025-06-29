@@ -72,7 +72,9 @@ const HomePage = () => {
             pt: hasMenuData ? 8 : 0,
           }}
         >
-          <Logo src="/bolt-logo.png" alt="Recipe off the Fridge" />
+          <a href='https://bolt.new/' target="_blank" rel="noopener noreferrer">
+            <Logo src="/bolt-logo.png" alt="Recipe off the Fridge" />
+          </a>
           <Typography variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 600 }}>
             Recipe off the Fridge
           </Typography>
